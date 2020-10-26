@@ -19,7 +19,8 @@ class DB{
     private $link;
     //私有的构造方法
     public function __construct(){
-        $this->host =  'localhost';
+        $this->host =  '49.234.72.229';
+//        $this->host =  'localhost';
         $this->port =  '3306';
         $this->user =  'root';
         $this->pass =  'root';
@@ -34,8 +35,9 @@ class DB{
     }
     //连接数据库
     private function db_connect(){
-        $this->link=mysqli_connect($this->host,$this->user,$this->pass,$this->db);
+        $this->link=mysqli_connect($this->host,$this->user,$this->pass,$this->db,$this->port);
         if(!$this->link){
+            die(mysqli_errno($this->link));
             echo "数据库连接失败<br>";
             echo "错误编码".mysqli_errno($this->link)."<br>";
             echo "错误信息".mysqli_error($this->link)."<br>";

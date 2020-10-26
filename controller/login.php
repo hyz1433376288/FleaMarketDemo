@@ -14,7 +14,10 @@ require_once ("../class/DB.php");
 require_once ('../include/alert.php');
 $res = check_login($uid,$password);
 var_dump($res);
-if($res){
+
+if(gettype($res)=='array'){
+
+    require_once ('../include/login_session.php');
     alt('登陆成功','../index.php');
 //    header('location:../index.php');
 }else{
@@ -28,10 +31,8 @@ function check_login($uid,$password){
     $cnt = mysqli_num_rows($res);
 
     if($cnt==1){
-        require_once ('../include/login_session.php');
-        return true;
+        $row = $res->fetch_array(MYSQLI_ASSOC);
+        return $row;
     }
     return false;
-
-
 }

@@ -76,24 +76,38 @@
             </ul>
             <!-- 右边 -->
             <ul class="header-right">
+                <?php
+                require_once ('./include/online.php');
+                // 如果没有登陆
+                if(!online()){
+                    ?>
+
                 <li class="header-right-tit">
                     <a href="login.html" id="header-user">请登录</a>
                 </li>
                 <li class="header-right-tit">
                     <a href="sigin.html">注册有礼</a>
                 </li>
+                <?php
+                }else{
+                    ?>
                 <li class="header-right-tit">
-                    <a href="shop.html">我的订单</a>
+                    <a href="shop.html">我的信息</a>
                 </li>
                 <li class="header-right-tit">
-                    <a href="shop.html">我的跳蚤</a>
+                    <a href="shop.html">我的发布</a>
+                <?php
+                }
+                ?>
+
                 </li>
+
             </ul>
         </div>
     </header>
     <div class="right">
         <ul class="wrap1">
-            <li><a href="my.html"><span class="iconfont icon-ren-copy"></span></a></li>
+            <li><a href="myinfo.html"><span class="iconfont icon-ren-copy"></span></a></li>
             <li><a href="cart.html"><span class="iconfont icon-gouwuche2"></span><span>购物车<b
                             class="numc">0</b></span></a></li>
             <li><a href="shop.html"><span class="iconfont icon-shouhou1"></span><span>售后服务</span></a></li>
