@@ -92,7 +92,7 @@
                 }else{
                     ?>
                 <li class="header-right-tit">
-                    <a href="shop.html">我的信息</a>
+                    <a href="myinfo.php">我的信息</a>
                 </li>
                 <li class="header-right-tit">
                     <a href="shop.html">我的发布</a>
@@ -107,7 +107,7 @@
     </header>
     <div class="right">
         <ul class="wrap1">
-            <li><a href="myinfo.html"><span class="iconfont icon-ren-copy"></span></a></li>
+            <li><a href="myinfo.php"><span class="iconfont icon-ren-copy"></span></a></li>
             <li><a href="cart.html"><span class="iconfont icon-gouwuche2"></span><span>购物车<b
                             class="numc">0</b></span></a></li>
             <li><a href="shop.html"><span class="iconfont icon-shouhou1"></span><span>售后服务</span></a></li>

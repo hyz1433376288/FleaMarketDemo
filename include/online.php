@@ -16,3 +16,9 @@ function online(){
 //    echo 'FFFF';
     return false;
 }
+function offline_alert($msg = '请先登录'){
+    if(!online()){
+        require_once ('alert.php');
+        alt_back($msg);
+    }
+}
