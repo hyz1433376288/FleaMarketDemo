@@ -15,14 +15,15 @@ class Goods
     private $preview;
     private $remain;
 
+
     /**
      * Goods constructor.
-     * @param $name string 商品名字
-     * @param $priceNow float 当前价格
-     * @param $priceOld float 原价
-     * @param $description string 商品描述
-     * @param $preview string 预览图路径
-     * @param $remain int 剩余数量
+     * @param string $name 商品名字
+     * @param float $priceNow 当前价格
+     * @param float $priceOld 原价
+     * @param string $description 商品描述
+     * @param string $preview 预览图路径
+     * @param int $remain 剩余数量
      */
     public function __construct($name, $priceNow, $priceOld, $description, $preview, $remain)
     {
