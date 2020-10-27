@@ -17,7 +17,6 @@ class Goods
 
     /**
      * Goods constructor.
-     * @param $gid int 商品唯一标识符
      * @param $name string 商品名字
      * @param $priceNow float 当前价格
      * @param $priceOld float 原价
@@ -25,9 +24,8 @@ class Goods
      * @param $preview string 预览图路径
      * @param $remain int 剩余数量
      */
-    public function __construct($gid, $name, $priceNow, $priceOld, $description, $preview, $remain)
+    public function __construct($name, $priceNow, $priceOld, $description, $preview, $remain)
     {
-        $this->gid = $gid;
         $this->name = $name;
         $this->priceNow = $priceNow;
         $this->priceOld = $priceOld;
@@ -37,6 +35,7 @@ class Goods
     }
 
     /**
+     * 获取商品唯一标识符
      * @return int
      */
     public function getGid(): int
@@ -44,13 +43,6 @@ class Goods
         return $this->gid;
     }
 
-    /**
-     * @param int $gid
-     */
-    public function setGid(int $gid): void
-    {
-        $this->gid = $gid;
-    }
 
     /**
      * @return string
