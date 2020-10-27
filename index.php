@@ -251,7 +251,38 @@
         </li>
     </ul>
 </section>
-
+<div>
+    <div class="main-tit">—— <b>商品列表</b>——</div>
+    <ul class="wrap shopwrap">
+        <li class="main">
+            <a href="shop.html"><img src="images/phone1.jpg"></a>
+            <div class="main-detail">
+                <div class="detail-title">【超级爆品】一加 OnePlus 7 Pro 2K+90Hz 流体屏 骁龙855旗舰 4800万超广角三摄 8GB+256GB
+                    星雾蓝全面屏拍照游戏手机
+                </div>
+                <div class="detail-price"><b class="price">￥3899.00</b class="price">
+                    <div class="detail-car">加入购物车</div>
+                </div>
+            </div>
+        </li>
+        <li class="main"><a href="shop.html"><img src="images/phone2.jpg"></a>
+            <div class="main-detail">
+                <div class="detail-title">荣耀V20 游戏手机 麒麟980芯片 魅眼全视屏 4800万深感相机 6GB+128GB 魅丽红 移动联通电信4G全面屏手机</div>
+                <div class="detail-price"><b class="price">¥1899.00</b class="price">
+                    <div class="detail-car">加入购物车</div>
+                </div>
+            </div>
+        </li>
+        <li class="main"><a href="shop.html"><img src="images/phone3.jpg"></a>
+            <div class="main-detail">
+                <div class="detail-title">【Apple iPhone 11 (A2223) 128GB 黑色 移动联通电信4G手机 双卡双待</div>
+                <div class="detail-price"><b class="price">¥5999.00</b>
+                    <div class="detail-car">加入购物车</div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
 
 <!-- 页脚 -->
 <div class="main-tit">—— <b>END </b>——</div>
