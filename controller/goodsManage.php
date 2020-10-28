@@ -4,18 +4,24 @@
  */
 
 /**
- * 添加商品至数据库
- * @param string $name 商品名字
- * @param float $priceNow 当前价格
- * @param float $priceOld 原价
- * @param string $description 商品描述
- * @param string $preview 预览图路径
- * @param int $remain 剩余数量
- * @return bool 是否成功添加入数据库
+ * 添加商品信息至数据库
+ * @param Goods $goods 要添加的商品的实例
+ * @return bool 是否添加成功
  */
-function addGoods($name, $priceNow, $priceOld, $description, $preview, $remain)
+function addGoods($goods)
 {
+    $name = $goods->getName();
+    $priceNow = $goods->getPriceNow();
+    $priceOld = $goods->getPriceOld();
+    $description = $goods->getDescription();
+    $preview = $goods->getPreview();
+    $remain = $goods->getRemain();
     $sql_add = "INSERT INTO `goods`(`name`, `price_now`, `price_old`, `description`, `preview`, `remain`) VALUES ('{$name}', {$priceNow}, $priceOld, $description, $preview, $remain})";
     $db = new DB();
     return $db->query($sql_add);
+}
+
+function getGoodsList()
+{
+
 }
