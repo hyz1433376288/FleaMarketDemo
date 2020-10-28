@@ -10,9 +10,9 @@
         #sub_btn {
             position: absolute;
             top: 430px;
-            left: 40px;
+            right: 100px;
             width: 100px;
-            height: 40px;
+            height: 44px;
             margin-top: 21px;
             text-align: center;
             color: #fff;
@@ -25,7 +25,7 @@
         .input_review_pic {
             position: absolute;
             top: 200px;
-            left: 40%;
+            right: 44%;
         }
 
         #preview {
@@ -98,27 +98,27 @@
 <body>
 <form method="post" action="#">
     <div class="input_items" style="position: relative">
-        <div style="right: 40%">
+        <div style="right: 44%">
             <label>商品名字：</label>
             <input name="name" type="text" value="">
         </div>
-        <div style="right: 40%;top:32px">
+        <div style="right: 44%;top:32px">
             <label>商品描述：</label>
             <input name="description" type="text" value="">
         </div>
-        <div style="right: 40%;top:64px">
+        <div style="right: 44%;top:64px">
             <label>原价(￥)：</label>
             <input name="old" type="number" value="">
         </div>
-        <div style="right: 40%;top:96px">
+        <div style="right: 44%;top:96px">
             <label>现价(￥)：</label>
             <input name="now" type="number" value="">
         </div>
-        <div style="right: 40%;top:128px">
+        <div style="right: 44%;top:128px">
             <label>货余量：</label>
             <input name="remain" type="number" value="">
         </div>
-        <div style="right: 40%;top:160px">
+        <div style="right: 44%;top:160px">
             <label>
                 是否为抢购商品：
                 <input name="type" value="1" type="checkbox">
@@ -131,7 +131,7 @@
         </div>
         <input type="file" name="现在" value="选择预览图" onchange="previewImage(this)"/>
     </div>
-    <div style="position: absolute; top:0; left: 43%;">
+    <div style="position: absolute; top:0; right: 43%;">
         <input type="submit" value="确认发布" id="sub_btn">
     </div>
 </form>
