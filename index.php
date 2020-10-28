@@ -194,106 +194,23 @@ require_once './controller/goodsManage.php';
 <section class="section3">
     <ul class="rush-list">
         <?php
-//        示例1
-        echoGoodsInHtml(getGoodsList()[2], 1);
+        $list = getGoodsList();
+        foreach ($list as $goods) {
+            if ($goods->getType() == 1)
+                echoGoodsInHtml($goods, 1);
+        }
         ?>
-        ?>
-        <li class="rush-item">
-            <div class="shadow">
-                <div class="sec3-img">
-                    <img src="./images/1.png">
-                    <div class="get-time" data-timenow="2019-11-30,10:00:00">距离抢购开始还有<br>1小时5分10秒</div>
-                </div>
-                <div class="info">
-                    <h3 title="小米小爱蓝牙音箱随身版 白色">小米小爱蓝牙音箱随身版 白色</h3>
-                    <p>小巧便携，一键唤醒小爱</p>
-                    <p><span>24.50元</span>
-                        <del>49元</del>
-                    </p>
-                    <button>即将开始</button>
-                </div>
-            </div>
-        </li>
-        <li class="rush-item">
-            <div class="shadow">
-                <div class="sec3-img"><img src="./images/2.png">
-                    <div class="get-time" data-timenow="2019-11-30,12:00:00">距离抢购开始还有<br>1小时5分10秒</div>
-                </div>
-                <div class="info">
-                    <h3 title="贝医生0+防蛀健齿牙膏 100克">贝医生0+防蛀健齿牙膏 100克</h3>
-                    <p>强健牙釉质，牙齿更坚固</p>
-                    <p><span>1.00元</span>
-                        <del>12.9元</del>
-                    </p>
-                    <button>即将开始</button>
-                </div>
-            </div>
-        </li>
-        <li class="rush-item">
-            <div class="shadow">
-                <div class="sec3-img"><img src="./images/3.jpg">
-                    <div class="get-time" data-timenow="2019-11-30,14:00:00">距离抢购开始还有<br>1小时5分10秒</div>
-                </div>
-                <div class="info">
-                    <h3 title="小米路由器4C 白色">小米路由器4C 白色</h3>
-                    <p>小巧便携，一键唤醒小爱</p>
-                    <p><span>24.50元</span>
-                        <del>49元</del>
-                    </p>
-                    <button>即将开始</button>
-                </div>
-            </div>
-        </li>
-        <li class="rush-item">
-            <div class="shadow">
-                <div class="sec3-img"><img src="./images/4.jpg">
-                    <div class="get-time" data-timenow="2019-12-30,16:00:00">距离抢购开始还有<br>1小时5分10秒</div>
-                </div>
-                <div class="info">
-                    <h3 title="小米旅行箱 青春款 20英寸 黄色 20寸">小米旅行箱 青春款 20英寸 黄色 20寸</h3>
-                    <p>环保材料，轻便重量</p>
-                    <p><span>199.00元</span>
-                        <del>249元</del>
-                    </p>
-                    <button>即将开始</button>
-                </div>
-            </div>
-        </li>
     </ul>
 </section>
 <div>
     <div class="main-tit">—— <b>商品列表</b>——</div>
     <ul class="wrap shopwrap">
-        <li class="main">
-            <a href="shop.html"><img src="images/phone1.jpg"></a>
-            <div class="main-detail">
-                <div class="detail-title">【超级爆品】一加 OnePlus 7 Pro 2K+90Hz 流体屏 骁龙855旗舰 4800万超广角三摄 8GB+256GB
-                    星雾蓝全面屏拍照游戏手机
-                </div>
-                <div class="detail-price"><b class="price">￥3899.00</b class="price">
-                    <div class="detail-car">加入购物车</div>
-                </div>
-            </div>
-        </li>
-        <li class="main"><a href="shop.html"><img src="images/phone2.jpg"></a>
-            <div class="main-detail">
-                <div class="detail-title">荣耀V20 游戏手机 麒麟980芯片 魅眼全视屏 4800万深感相机 6GB+128GB 魅丽红 移动联通电信4G全面屏手机</div>
-                <div class="detail-price"><b class="price">¥1899.00</b class="price">
-                    <div class="detail-car">加入购物车</div>
-                </div>
-            </div>
-        </li>
-        <li class="main"><a href="shop.html"><img src="images/phone3.jpg"></a>
-            <div class="main-detail">
-                <div class="detail-title">【Apple iPhone 11 (A2223) 128GB 黑色 移动联通电信4G手机 双卡双待</div>
-                <div class="detail-price"><b class="price">¥5999.00</b>
-                    <div class="detail-car">加入购物车</div>
-                </div>
-            </div>
-        </li>
         <?php
-//        示例2
-        echoGoodsInHtml(getGoodsList()[2], 2);
+        $list = getGoodsList();
+        foreach ($list as $goods) {
+            if ($goods->getType() == 2)
+                echoGoodsInHtml($goods, 2);
+        }
         ?>
     </ul>
 </div>
