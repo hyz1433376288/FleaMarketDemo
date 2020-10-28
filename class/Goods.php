@@ -11,8 +11,8 @@ class Goods
     private $name;
     private $priceNow;
     private $priceOld;
-    private $description;
-    private $preview;
+    private $description = '暂无具体描述';
+    private $preview = './images/NoPreview.png';
     private $remain;
 
 
@@ -32,8 +32,15 @@ class Goods
         $this->name = $name;
         $this->priceNow = $priceNow;
         $this->priceOld = $priceOld;
-        $this->description = $description;
-        $this->preview = $preview;
+        //如果有，则替换默认值，否则使用默认值
+        if ($description != null) {
+            //替换默认值
+            $this->description = $description;
+        }
+        if ($preview != null) {
+            //替换默认值
+            $this->preview = $preview;
+        }
         $this->remain = $remain;
     }
 
