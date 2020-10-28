@@ -1,7 +1,11 @@
 <?php
 /**
- * 商品操作类，包含添加商品，删除商品，修改商品等...
+ * 商品操作，包含添加商品，删除商品，修改商品等...
  */
+
+require_once '../class/DB.php';
+require_once '../class/Goods.php';
+
 
 /**
  * 添加商品信息至数据库
@@ -21,7 +25,28 @@ function addGoods($goods)
     return $db->query($sql_add);
 }
 
+/**
+ * 获取全部商品的列表
+ * @return ArrayObject Goods对象的列表
+ */
 function getGoodsList()
 {
-
+    $sql = "SELECT `gid`, `name`, `price_now`, `price_old`, `description`, `preview`, `remain` FROM `goods`;";
+    $db = new DB();
+    $re = $db->query($sql);
+    $goodsList = new ArrayObject();
+    while (($row = $re->fetch_assoc()) != null) {
+        $goods = new Goods(
+            $row['gid'],
+            $row['name'],
+            $row['price_now'],
+            $row['price_old'],
+            $row['description'],
+            $row['preview'],
+            $row['remain']
+        );
+        $goodsList->append($goods);
+    }
+    return $goodsList;
 }
+
