@@ -3,8 +3,8 @@
  * 商品操作，包含添加商品，删除商品，修改商品等...
  */
 
-require_once '../class/DB.php';
-require_once '../class/Goods.php';
+require_once './class/DB.php';
+require_once './class/Goods.php';
 
 
 /**
@@ -48,5 +48,51 @@ function getGoodsList()
         $goodsList->append($goods);
     }
     return $goodsList;
+}
+
+/**
+ * 在HTML中展示商品
+ * @param Goods $goods 要展示的商品的Goods对象
+ * @param int $type 1 or 2
+ */
+function echoGoodsInHtml($goods, $type)
+{
+    $name = $goods->getName();
+    $preview = $goods->getPreview();
+    $priceNow = $goods->getPriceNow();
+    //输出类型1
+    if ($type == 1) {
+        echo <<<ETO
+        <li class="rush-item">
+            <div class="shadow">
+                <div class="sec3-img">
+                    <img src="{$preview}">
+                    <div class="get-time" data-timenow="2019-11-30,10:00:00">距离抢购开始还有<br>1小时5分10秒</div>
+                </div>
+                <div class="info">
+                    <h3 title="小米小爱蓝牙音箱随身版 白色">{$name}</h3>
+                    <p>{$goods->getDescription()}</p>
+                    <p><span>{$priceNow}元</span>
+                        <del>{$goods->getPriceOld()}元</del>
+                    </p>
+                    <button>即将开始</button>
+                </div>
+            </div>
+        </li>
+ETO;
+    }
+    //输出类型2
+    if ($type == 2) {
+        echo <<<ETO
+        <li class="main"><a href="shop.html"><img src="{$goods->getPreview()}"></a>
+            <div class="main-detail">
+                <div class="detail-title">{$goods->getName()}</div>
+                <div class="detail-price"><b class="price">¥{$goods->getPriceNow()}</b>
+                    <div class="detail-car">加入购物车</div>
+                </div>
+            </div>
+        </li>
+ETO;
+    }
 }
 

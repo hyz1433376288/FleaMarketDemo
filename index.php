@@ -1,3 +1,8 @@
+<?php
+require_once './controller/goodsManage.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -188,6 +193,11 @@
 <div class="main-tit">—— <b>抢购列表</b>——</div>
 <section class="section3">
     <ul class="rush-list">
+        <?php
+//        示例1
+        echoGoodsInHtml(getGoodsList()[2], 1);
+        ?>
+        ?>
         <li class="rush-item">
             <div class="shadow">
                 <div class="sec3-img">
@@ -281,6 +291,10 @@
                 </div>
             </div>
         </li>
+        <?php
+//        示例2
+        echoGoodsInHtml(getGoodsList()[2], 2);
+        ?>
     </ul>
 </div>
 
