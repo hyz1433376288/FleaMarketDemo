@@ -20,7 +20,8 @@ function addGoods($goods)
     $description = $goods->getDescription();
     $preview = $goods->getPreview();
     $remain = $goods->getRemain();
-    $sql_add = "INSERT INTO `goods`(`name`, `price_now`, `price_old`, `description`, `preview`, `remain`) VALUES ('{$name}', {$priceNow}, $priceOld, $description, $preview, $remain})";
+    $type = $goods->getType();
+    $sql_add = "INSERT INTO `goods`(`name`, `price_now`, `price_old`, `description`, `preview`, `remain`, `type`) VALUES ('$name', $priceNow, $priceOld, $description, $preview, $remain, $type)";
     $db = new DB();
     return $db->query($sql_add);
 }
@@ -31,7 +32,7 @@ function addGoods($goods)
  */
 function getGoodsList()
 {
-    $sql = "SELECT `gid`, `name`, `price_now`, `price_old`, `description`, `preview`, `remain` FROM `goods`;";
+    $sql = "SELECT `gid`, `name`, `price_now`, `price_old`, `description`, `preview`, `remain`, `type` FROM `goods`;";
     $db = new DB();
     $re = $db->query($sql);
     $goodsList = new ArrayObject();
@@ -43,7 +44,8 @@ function getGoodsList()
             $row['price_old'],
             $row['description'],
             $row['preview'],
-            $row['remain']
+            $row['remain'],
+            $row['type']
         );
         $goodsList->append($goods);
     }

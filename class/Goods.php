@@ -14,6 +14,7 @@ class Goods
     private $description = '暂无具体描述';
     private $preview = './images/NoPreview.png';
     private $remain;
+    private $type = 2;//默认非抢购商品
 
 
     /**
@@ -25,8 +26,9 @@ class Goods
      * @param string $description 商品描述
      * @param string $preview 预览图路径
      * @param int $remain 剩余数量
+     * @param int $type 1:抢购商品 or 2:非抢购商品
      */
-    public function __construct($gid, $name, $priceNow, $priceOld, $description, $preview, $remain)
+    public function __construct($gid, $name, $priceNow, $priceOld, $description, $preview, $remain, $type)
     {
         $this->gid = $gid;
         $this->name = $name;
@@ -40,6 +42,10 @@ class Goods
         if ($preview != null) {
             //替换默认值
             $this->preview = $preview;
+        }
+        if ($type != null) {
+            //替换默认值
+            $this->type = $type;
         }
         $this->remain = $remain;
     }
@@ -149,4 +155,21 @@ class Goods
     {
         $this->remain = $remain;
     }
+
+    /**
+     * @return int
+     */
+    public function getType(): int
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param int $type
+     */
+    public function setType(int $type): void
+    {
+        $this->type = $type;
+    }
+
 }
